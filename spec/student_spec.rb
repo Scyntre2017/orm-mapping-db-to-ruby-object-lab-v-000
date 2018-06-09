@@ -66,8 +66,6 @@ describe Student do
       row = [1, "Pat", 12]
       pat = Student.new_from_db(row)
 
-      binding.pry
-
       expect(pat.id).to eq(row[0])
       expect(pat.name).to eq(row[1])
       expect(pat.grade).to eq(row[2])
