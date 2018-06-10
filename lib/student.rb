@@ -22,7 +22,7 @@ class Student
     SQL
 
     grade_9 = DB[:conn].execute(sql)
-    grade_9.each { |student| self.new_from_db(student) }
+    grade_9.map { |student| self.new_from_db(student) }
   end
 
   def self.students_below_12th_grade
