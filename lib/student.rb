@@ -67,6 +67,7 @@ class Student
     SQL
 
     grade_X_students = DB[:conn].execute(sql).map{ |row| self.new_from_db(row) }
+    binding.pry
   end
 
   def self.find_by_name(name)
