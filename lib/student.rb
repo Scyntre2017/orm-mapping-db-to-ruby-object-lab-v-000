@@ -26,7 +26,7 @@ class Student
     SQL
 
     grade_9 = DB[:conn].execute(sql)
-    grade_9.map { |student| self.new_from_db(student) }
+    grade_9.map { |row| self.new_from_db(row) }
   end
 
   def self.students_below_12th_grade
@@ -36,7 +36,7 @@ class Student
     SQL
 
     below_grade_12 = DB[:conn].execute(sql)
-    below_grade_12.map { |student| self.new_from_db(student) }
+    below_grade_12.map { |row| self.new_from_db(row) }
   end
 
   def self.find_by_name(name)
@@ -45,8 +45,8 @@ class Student
       WHERE name = ?;
     SQL
 
-    student = DB[:conn].execute(sql, name).first
-    self.new_from_db(student)
+    row = DB[:conn].execute(sql, name).first
+    self.new_from_db(row)
   end
 
   def save
