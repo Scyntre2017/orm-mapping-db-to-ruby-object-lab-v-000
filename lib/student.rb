@@ -32,6 +32,7 @@ class Student
     SQL
 
     below_grade_12 = DB[:conn].execute(sql)
+    below_grade_12.each { |student| self.new_from_db(student) }
   end
 
   def self.find_by_name(name)
