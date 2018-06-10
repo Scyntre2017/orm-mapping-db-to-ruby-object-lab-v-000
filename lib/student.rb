@@ -11,8 +11,12 @@ class Student
   end
 
   def self.all
-    # retrieve all the rows from the "Students" database
-    # remember each row should be a new instance of the Student class
+    sql = <<-SQL
+      SELECT * FROM students;
+    SQL
+
+    students = DB[:conn].execute(sql)
+    students.map { |row| self.new_from_db(row) }
   end
 
   def self.count_all_students_in_grade_9
