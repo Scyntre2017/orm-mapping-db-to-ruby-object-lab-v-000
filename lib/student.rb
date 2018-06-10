@@ -56,6 +56,9 @@ class Student
       WHERE grade = 10
       LIMIT 1;
     SQL
+
+    first_student = DB[:conn].execute(sql)
+    first_student.map { |row| self.new_from_db(row)  }
   end
 
   def self.find_by_name(name)
