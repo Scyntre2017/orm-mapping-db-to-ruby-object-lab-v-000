@@ -93,7 +93,7 @@ describe Student do
         sam.name = "Sam"
         sam.grade = 9
         sam.save
-        dave.name = "Sam"
+        dave.name = "Dave"
         dave.grade = 9
         dave.save
 
