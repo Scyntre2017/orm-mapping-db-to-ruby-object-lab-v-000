@@ -24,6 +24,13 @@ class Student
     grade_9 = DB[:conn].execute(sql)
   end
 
+  def self.students_below_12th_grade
+    sql = <<-SQL
+      SELECT * FROM students
+      WHERE grade < 12;
+    SQL
+  end
+
   def self.find_by_name(name)
     sql = <<-SQL
       SELECT * FROM students
