@@ -22,7 +22,6 @@ class Student
     SQL
 
     grade_9 = DB[:conn].execute(sql)
-    grade_9
   end
 
   def self.find_by_name(name)
