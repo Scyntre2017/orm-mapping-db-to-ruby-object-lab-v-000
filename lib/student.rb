@@ -21,8 +21,8 @@ class Student
       WHERE grade = 9;
     SQL
 
-    DB[:conn].execute(sql)
-    binding.pry
+    grade_9 = DB[:conn].execute(sql)
+    grade_9
   end
 
   def self.find_by_name(name)
