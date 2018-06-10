@@ -93,6 +93,9 @@ describe Student do
         sam.name = "Sam"
         sam.grade = 9
         sam.save
+        dave.name = "Sam"
+        dave.grade = 9
+        dave.save
 
         all_in_9 = Student.count_all_students_in_grade_9
         expect(all_in_9.size).to eq(1)
