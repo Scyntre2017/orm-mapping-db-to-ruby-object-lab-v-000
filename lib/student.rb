@@ -59,7 +59,7 @@ class Student
 
     first_student = DB[:conn].execute(sql)
     binding.pry
-    first_student.map { |row| self.new_from_db(row)  }
+    first_student.map { |row| self.new_from_db(row) }.first
   end
 
   def self.find_by_name(name)
